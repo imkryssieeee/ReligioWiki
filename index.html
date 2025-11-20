@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReligioWiki | Living Encyclopedia of World Belief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+
+  <header class="shell">
+    <div class="brand">
+      <span class="brand-icon">✦</span>
+      <div>
+        <p class="eyebrow">ReligioWiki</p>
+        <h1>Living encyclopedia for world religions</h1>
+        <p class="lede">Explore the history, beliefs, and cultural footprints of faith traditions across the globe. Crafted with a glassy, Apple-inspired UI and smooth micro-interactions.</p>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <button class="primary" onclick="document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });">Browse traditions</button>
+      <button class="ghost" id="downloadGuide">Download guide</button>
+    </div>
+    <div class="stats">
+      <div>
+        <p class="eyebrow">Traditions</p>
+        <strong>20+</strong>
+      </div>
+      <div>
+        <p class="eyebrow">Regions</p>
+        <strong>6 continents</strong>
+      </div>
+      <div>
+        <p class="eyebrow">Lenses</p>
+        <strong>History · Texts · Practice</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="filters" aria-label="Filters">
+      <div class="input-shell">
+        <label for="search">Search religions</label>
+        <div class="search-box">
+          <span>🔍</span>
+          <input id="search" name="search" type="search" placeholder="Search by name, origin, or theme" />
+        </div>
+      </div>
+      <div class="filter-pills" id="filterPills">
+        <button class="pill active" data-filter="all">All</button>
+      </div>
+    </section>
+
+    <section class="grid" id="cards" aria-live="polite"></section>
+
+    <section class="panels">
+      <article class="panel">
+        <div class="panel-header">
+          <h3>Historical arcs</h3>
+          <p>Timeline-style glimpses that trace each tradition from its origin to its modern expressions.</p>
+        </div>
+        <ul id="timeline" class="timeline"></ul>
+      </article>
+      <article class="panel">
+        <div class="panel-header">
+          <h3>Comparative insights</h3>
+          <p>Juxtapose sacred texts, core practices, and regional centers of gravity for quick study.</p>
+        </div>
+        <table class="compare" id="comparisonTable" aria-label="Comparison table">
+          <thead>
+            <tr>
+              <th>Tradition</th>
+              <th>Key texts</th>
+              <th>Central practices</th>
+              <th>Regions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+
+  <section class="shell detail" id="detailPage" aria-live="polite">
+    <div class="detail-header">
+      <div>
+        <p class="eyebrow">Deep-dive page</p>
+        <h2 id="detailName">Select a tradition to open its page</h2>
+        <p class="lede" id="detailOrigin">Click a card to load the full overview, history, beliefs, and modern presence.</p>
+      </div>
+      <div class="detail-actions">
+        <span class="tag" id="detailTag">—</span>
+        <button class="ghost" id="closeDetail" aria-label="Close detail page">Close</button>
+      </div>
+    </div>
+
+    <div class="detail-grid" id="detailContent" hidden>
+      <article class="detail-block">
+        <h4>History & formation</h4>
+        <p id="detailHistory"></p>
+      </article>
+      <article class="detail-block">
+        <h4>Core beliefs & worldview</h4>
+        <p id="detailBeliefs"></p>
+      </article>
+      <article class="detail-block">
+        <h4>Practices, rituals & ethics</h4>
+        <p id="detailPractices"></p>
+      </article>
+      <article class="detail-block">
+        <h4>Texts & teachings</h4>
+        <p id="detailTexts"></p>
+      </article>
+      <article class="detail-block">
+        <h4>Communities & regions</h4>
+        <p id="detailRegions"></p>
+      </article>
+      <article class="detail-block">
+        <h4>Modern landscape</h4>
+        <p id="detailModern"></p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="shell footer">
+    <div>
+      <p class="eyebrow">About</p>
+      <p>ReligioWiki is a lightweight, static “Wikipedia” for religious traditions. Curated summaries, clean glassmorphism, and smooth transitions make for relaxed reading.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Built for explorers</p>
+      <p>Use the quick filters, search, and comparison tools to navigate belief systems by geography, history, or practice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
