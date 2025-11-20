@@ -1,0 +1,2 @@
+# ReligioWiki
+Wikipedia for religions.
